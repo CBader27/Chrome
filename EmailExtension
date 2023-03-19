@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Email Tracker",
+  "description": "Get notified when someone opens an email you sent",
+  "version": "1.0",
+  "permissions": ["https://*/*", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
